@@ -19,13 +19,25 @@
 			<button type="button" class="remove" onclick="reload_interval(2000);"><span>Удалить все</span></button>
 			<button type="button" class="ready" onclick="reload_interval(2000);"><span>Выполнено все</span></button>
 		</div><br>
-		<div class="allTask">
-			<div class="textTask">fgfgfgf
-			</div>
+				<?php 
+					 require "php/db.php";
+        $at = mysqli_query($connect, "SELECT * FROM `task`");
+        $at = mysqli_fetch_all($at);
+        foreach ($at as $at) {
+					?>
+						<div class="allTask">
+			<div class="textTask">
+				<p><?= $at[1] ?></p>
+				</div>
 			<div class="block"></div><br><br>
 			<button type="button" class="removeTask" onclick="reload_interval(2000);"><span>Удалить</span></button>
 			<button type="button" class="readyTask" onclick="reload_interval(2000);"><span>Выполнено</span></button>
-		</div>
+			</div>
+			<br>
+				<?php
+				}
+			?>
+				
 		</div>
 	</section>
 </body>
