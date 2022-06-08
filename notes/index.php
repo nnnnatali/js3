@@ -14,7 +14,7 @@
 		<div class="newTask">
 			<form method="POST">
 				<input type="text" name="task" class="name" placeholder="Введите задачу">
-				<button type="button" class="random" onclick="reload_interval(2000);"><span>Добавить</span></button>
+				<button type="button" class="class" onclick="reload_interval(2000);"><span>Добавить</span></button>
 			</form>
 			<button type="button" class="remove" onclick="reload_interval(2000);"><span>Удалить все</span></button>
 			<button type="button" class="ready" onclick="reload_interval(2000);"><span>Выполнено все</span></button>
@@ -27,10 +27,12 @@
 					?>
 						<div class="allTask">
 			<div class="textTask">
-				<p><?= $at[1] ?></p>
+				<p class='draggable' draggable='true'><?= $at[1] ?></p>
 				</div>
-			<div class="block"></div><br><br>
-			<button type="button" class="removeTask" onclick="reload_interval(2000);"><span>Удалить</span></button>
+			<div class="block">
+				
+			</div><br><br>
+			<button type="button" class="removeTask" onclick="reload_interval(2000);"><a href="php/delite.php?id=<?= $at[0] ?>" style="text-decoration: none; color: black;">Удалить</a></button>
 			<button type="button" class="readyTask" onclick="reload_interval(2000);"><span>Выполнено</span></button>
 			</div>
 			<br>
@@ -40,5 +42,8 @@
 				
 		</div>
 	</section>
+
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="style.js"></script>
 </body>
 </html>
