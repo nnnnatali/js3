@@ -29,11 +29,11 @@
 			<div class="textTask">
 				<p class='draggable' draggable='true'><?= $at[1] ?></p>
 				</div>
-			<div class="block">
-				
+			<div class="block" id="block" style="background-color: red;">
+								
 			</div><br><br>
 			<button type="button" class="removeTask" onclick="reload_interval(2000);"><a href="php/delite.php?id=<?= $at[0] ?>" style="text-decoration: none; color: black;">Удалить</a></button>
-			<button type="button" class="readyTask" onclick="reload_interval(2000);"><span>Выполнено</span></button>
+			<button type="button" class="readyTask" id="btn"><span>Выполнено</span></button>
 			</div>
 			<br>
 				<?php
@@ -45,5 +45,7 @@
 
 	<script src="jquery-3.6.0.min.js"></script>
 	<script src="style.js"></script>
+	<script src="btn.js"></script>
+
 </body>
 </html>
